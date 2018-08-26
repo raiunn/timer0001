@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WW1-OH-7MO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,126 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="timer0001" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPv-dd-JRh">
+                                <rect key="frame" x="-3" y="359" width="204" height="150"/>
+                                <state key="normal" image="startBtn"/>
+                                <connections>
+                                    <action selector="startTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cup-VP-brI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JE7-NM-3sv">
+                                <rect key="frame" x="209" y="359" width="150" height="150"/>
+                                <state key="normal" image="stopBtn"/>
+                                <connections>
+                                    <action selector="stopTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U8i-PQ-u2Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN7-2I-Cm5">
+                                <rect key="frame" x="166" y="172" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JE7-NM-3sv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="96.5" id="4cN-OP-qgQ"/>
+                            <constraint firstItem="rPv-dd-JRh" firstAttribute="top" secondItem="JE7-NM-3sv" secondAttribute="top" id="9MD-Fu-Vfq"/>
+                            <constraint firstItem="HN7-2I-Cm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="XaE-Ad-v49"/>
+                            <constraint firstItem="JE7-NM-3sv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="dtC-hK-dEt"/>
+                            <constraint firstItem="JE7-NM-3sv" firstAttribute="leading" secondItem="rPv-dd-JRh" secondAttribute="trailing" constant="8" symbolic="YES" id="gfM-vY-Pyg"/>
+                            <constraint firstItem="rPv-dd-JRh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-19" id="m57-tn-4LB"/>
+                            <constraint firstItem="HN7-2I-Cm5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n7O-tC-a6B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ksc-HO-DTt">
+                        <barButtonItem key="rightBarButtonItem" title="時間設定" id="g8s-9S-mwr">
+                            <connections>
+                                <action selector="settingButtonAction:" destination="BYZ-38-t0r" id="99y-J3-ctR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timeDisplay" destination="HN7-2I-Cm5" id="aeE-Wt-2nv"/>
+                        <segue destination="xgL-St-ae5" kind="show" identifier="openSetting" id="DnG-uL-J0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1056.8" y="117.39130434782609"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="7Rg-wV-p15">
+            <objects>
+                <viewController id="xgL-St-ae5" customClass="SettingViewController" customModule="timer0001" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGc-kA-4ys">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylq-YA-OG8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="162"/>
+                                <accessibility key="accessibilityConfiguration" identifier="timePicker" label="timePicker"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrD-TG-mdw">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <state key="normal" image="selectBtn"/>
+                                <connections>
+                                    <action selector="chooseAction:" destination="xgL-St-ae5" eventType="touchUpInside" id="VdH-CA-rfw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="centerX" secondItem="mrD-TG-mdw" secondAttribute="centerX" id="7ED-BV-7La"/>
+                            <constraint firstAttribute="trailing" secondItem="ylq-YA-OG8" secondAttribute="trailing" id="By2-x3-jAN"/>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="trailing" secondItem="kOZ-Si-Gfy" secondAttribute="trailing" id="SP4-Y2-vZI"/>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="leading" secondItem="PGc-kA-4ys" secondAttribute="leading" id="TRh-AV-F4l"/>
+                            <constraint firstItem="mrD-TG-mdw" firstAttribute="centerY" secondItem="PGc-kA-4ys" secondAttribute="centerY" id="YYc-K1-JWZ"/>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="top" secondItem="kOZ-Si-Gfy" secondAttribute="top" id="aCZ-vi-gIS"/>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="leading" secondItem="kOZ-Si-Gfy" secondAttribute="leading" id="aSc-v4-jiD"/>
+                            <constraint firstItem="mrD-TG-mdw" firstAttribute="top" secondItem="ylq-YA-OG8" secondAttribute="bottom" constant="32" id="rBA-BP-qiu"/>
+                            <constraint firstItem="ylq-YA-OG8" firstAttribute="top" secondItem="kOZ-Si-Gfy" secondAttribute="top" id="wFk-U0-N2q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kOZ-Si-Gfy"/>
+                    </view>
+                    <connections>
+                        <outlet property="timerPicker" destination="ylq-YA-OG8" id="kcz-ha-4kT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1P-Qc-zq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.2" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NPF-FN-6Xp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WW1-OH-7MO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cES-cK-akx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hac-vJ-Gac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8i-js-bCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="776.76161919040487"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="selectBtn" width="150" height="150"/>
+        <image name="startBtn" width="150" height="150"/>
+        <image name="stopBtn" width="150" height="150"/>
+    </resources>
 </document>

@@ -12,6 +12,7 @@
 		1D8A33C220B56F3E00EB6847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8A33C020B56F3E00EB6847 /* Main.storyboard */; };
 		1D8A33C420B56F4000EB6847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8A33C320B56F4000EB6847 /* Assets.xcassets */; };
 		1D8A33C720B56F4000EB6847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8A33C520B56F4000EB6847 /* LaunchScreen.storyboard */; };
+		1D8A33DC20B828A000EB6847 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A33DB20B828A000EB6847 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1D8A33C320B56F4000EB6847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D8A33C620B56F4000EB6847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D8A33C820B56F4000EB6847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D8A33DB20B828A000EB6847 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				1D8A33BE20B56F3E00EB6847 /* ViewController.swift */,
 				1D8A33C020B56F3E00EB6847 /* Main.storyboard */,
 				1D8A33C320B56F4000EB6847 /* Assets.xcassets */,
+				1D8A33DB20B828A000EB6847 /* SettingViewController.swift */,
 				1D8A33C520B56F4000EB6847 /* LaunchScreen.storyboard */,
 				1D8A33C820B56F4000EB6847 /* Info.plist */,
 			);
@@ -137,6 +140,7 @@
 			files = (
 				1D8A33BF20B56F3E00EB6847 /* ViewController.swift in Sources */,
 				1D8A33BD20B56F3E00EB6847 /* AppDelegate.swift in Sources */,
+				1D8A33DC20B828A000EB6847 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
